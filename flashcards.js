@@ -22,21 +22,28 @@ function displayFlashcards(flashcards) {
 function createCardElement(card, index) {
     var cardElement = document.createElement('div');
     cardElement.classList.add('flashcard');
+    cardElement.style.position = 'relative'; // Add this line
 
-    if (card.type === 'text') {
+    if (card.type === 'textarea') {
         var textElement = document.createElement('p');
         textElement.textContent = card.content;
-        textElement.style.whiteSpace = 'pre-line'; // Preserve white-spaces
+        textElement.style.whiteSpace = 'pre-wrap'; // Preserve white-spaces and line breaks
+        textElement.classList.add('flashcard-text'); // Add this line
         cardElement.appendChild(textElement);
-    } else if (card.type === 'screenshot') {
+    }
+     else if (card.type === 'screenshot') {
         var imgElement = document.createElement('img');
         imgElement.src = card.content;
         imgElement.alt = 'Screenshot';
+        imgElement.classList.add('flashcard-img'); // Add this line
         cardElement.appendChild(imgElement);
     }
-
+    
     var deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
+    deleteButton.style.position = 'absolute'; // Add this line
+    deleteButton.style.bottom = '10px'; // Add this line
+    deleteButton.style.right = '10px'; // Add this line
     deleteButton.addEventListener('click', function () {
         deleteFlashcard(index);
     });
@@ -44,6 +51,7 @@ function createCardElement(card, index) {
     cardElement.appendChild(deleteButton);
     return cardElement;
 }
+
 
 
 function deleteFlashcard(index) {
