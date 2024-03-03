@@ -1,29 +1,29 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Changed font to Roboto for a modern look */
-    text-align: center;
+    font-family: 'Roboto', sans-serif;
     margin: 20px;
-    background-color: #f4f4f4; /* Added a light background color */
+    background-color: #f4f4f4;
+}
+
+.title{
+    align-items: center;
 }
 
 h1 {
     color: #333;
-    font-size: 2em; /* Increased the font size */
+    font-size: 2em;
 }
 
-/* Container for each flashcard */
-.flashcard-container {
+#flashcards-container {
     display: flex;
-    flex-direction: row; /* Add this line */
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    margin-top: 20px;
+    justify-content: flex-start;
 }
 
-
-/* Individual flashcard styling */
-/* Individual flashcard styling */
 .flashcard {
-    flex: 0 0 calc(30% - 20px);
+    position: relative; /* Make the flashcard a positioning context */
+    flex: 0 0 calc(16.666% - 20px);
     margin: 10px;
     padding: 15px;
     border: 1px solid #ddd;
@@ -32,26 +32,14 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     overflow: hidden;
-    width: 250px;
-    height: 250px;
     box-sizing: border-box;
-    white-space: pre-wrap; /* Preserve spaces and line breaks */
-}
-
-
-/* Container for small components aligned side by side */
-.small-container {
+    height: 200px;
     display: flex;
-    align-items: center; /* Align items vertically in the small container */
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: pre-wrap;
 }
 
-/* Responsive styling for images within flashcards */
-.flashcard img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Button styling */
 button {
     margin-top: 15px;
     padding: 10px;
@@ -67,15 +55,10 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Hover effect for flashcards */
 .flashcard:hover {
     transform: scale(1.05);
 }
 
-
-/* ... (your existing styles) */
-
-/* Styling for the modal */
 #modal-container {
     display: none;
     position: fixed;
@@ -95,7 +78,6 @@ button:hover {
     max-width: 70%;
     max-height: 80%;
     overflow: auto;
-
 }
 
 .close {
@@ -108,10 +90,30 @@ button:hover {
 }
 
 .modal-content img {
-    max-width: 100%; /* Ensure the image does not exceed the width of the modal */
-    max-height: 100%; /* Ensure the image does not exceed the height of the modal */
-    width: auto; /* Allow the image to adjust its width based on the available space */
-    height: auto; /* Allow the image to adjust its height based on the available space */
-    display: block; /* Align the image as a block element for centering */
-    margin: 0 auto; /* Center the image within the modal */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.flashcard text {
+    width: 100%; /* Set a fixed width */
+    overflow-wrap: break-word; /* To prevent overflow */
+    font-size: medium;
+    padding-bottom: 5px;
+}
+
+.flashcard img {
+    height: 150px; /* Set a fixed height */
+    object-fit: contain; /* To keep aspect ratio */
+}
+
+.flashcard button {
+    align-self: flex-end;
+}
+
+p{
+    font-size: medium;
 }
