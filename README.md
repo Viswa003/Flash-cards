@@ -1,6 +1,6 @@
-# WebSave Chrome Extension
+# Flash-Cards Chrome Extension
 
-Flash-Crrds is a versatile Chrome extension designed to enhance your web browsing experience by allowing you to effortlessly save text snippets and screenshots of webpages. Whether you're conducting research, collecting references, or simply archiving interesting content, WebSave simplifies the process and provides easy access to your saved data.
+Flash-Cards is a versatile Chrome extension designed to enhance your web browsing experience by allowing you to effortlessly save text snippets and screenshots of webpages. Whether you're conducting research, collecting references, or simply archiving interesting content, WebSave simplifies the process and provides easy access to your saved data.
 
 ## Features
 
